@@ -83,6 +83,9 @@
     <PackageReference Include="Autofac">
       <Version>4.9.2</Version>
     </PackageReference>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Veresiye.Data\Veresiye.Data.csproj">
