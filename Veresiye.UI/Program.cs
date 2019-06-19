@@ -19,7 +19,7 @@ namespace Veresiye.UI
         {
             // Autofac = IoC (Inversion-of-Control) Provider'ıdır. Bununla dependency injection işlemi kolaylaşır.
             var builder = new ContainerBuilder();
-            builder.RegisterType<ApplicationDbContext>().As<ApplicationDbContext>();
+            builder.RegisterType<ApplicationDbContext>().As<ApplicationDbContext>().SingleInstance();
 
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
@@ -31,6 +31,7 @@ namespace Veresiye.UI
 
             // formlarımız
             builder.RegisterType<FrmMain>().As<FrmMain>();
+            builder.RegisterType<FrmRegister>().As<FrmRegister>();
 
             var container = builder.Build();
 

@@ -13,16 +13,25 @@ namespace Veresiye.UI
 {
     public partial class FrmMain : Form
     {
-        private readonly ICompanyService companyService;
-        public FrmMain(ICompanyService companyService)
+        private readonly IUserService userService;
+        private readonly FrmRegister frmRegister;
+        public FrmMain(IUserService userService, FrmRegister frmRegister)
         {
-            this.companyService = companyService;
+            this.userService = userService;
+            this.frmRegister = frmRegister;
             InitializeComponent();
+
+            this.frmRegister.MdiParent = this;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(companyService.GetAll().Count().ToString());
+            var userCount = userService.GetAll().Count();
+
+            if (userCount >= 0)
+            {
+                frmRegister.Show();
+            }
         }
     }
 }
