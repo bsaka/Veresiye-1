@@ -32,7 +32,8 @@ namespace Veresiye.UI
             // formlarımız
             builder.RegisterType<FrmMain>().As<FrmMain>();
             builder.RegisterType<FrmRegister>().As<FrmRegister>();
-
+            builder.RegisterType<FrmCompanies>().As<FrmCompanies>();
+            builder.RegisterType<FrmLogin>().As<FrmLogin>();
             var container = builder.Build();
 
             using (var scope = container.BeginLifetimeScope())
