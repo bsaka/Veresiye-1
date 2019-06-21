@@ -39,6 +39,8 @@ namespace Veresiye.Service
             return companyRepository.GetAll();
         }
 
+        
+
         public void Insert(Company company)
         {
             companyRepository.Insert(company);
@@ -57,7 +59,7 @@ namespace Veresiye.Service
         void Insert(Company company);
         void Update(Company company);
         void Delete(int id);
-        IEnumerable<Company> GetAll();
+        IEnumerable<Company> GetAll();        
         Company Get(int id);
     }
 }
